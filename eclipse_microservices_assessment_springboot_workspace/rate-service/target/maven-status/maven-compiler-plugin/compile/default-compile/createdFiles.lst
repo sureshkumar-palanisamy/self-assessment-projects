@@ -1,0 +1,4 @@
+com\vat\rates\main\RateServiceApplication.class
+com\vat\rates\main\controller\RatesWebService.class
+com\vat\rates\main\model\CountryRates.class
+com\vat\rates\main\service\RateServiceProxy.class
