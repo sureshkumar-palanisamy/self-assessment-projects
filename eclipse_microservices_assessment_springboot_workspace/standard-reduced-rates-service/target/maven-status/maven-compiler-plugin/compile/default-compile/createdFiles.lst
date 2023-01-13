@@ -1,0 +1,5 @@
+com\vat\rates\standardreduced\main\rest\service\CountriesRatesServiceProxy.class
+com\vat\rates\standardreduced\main\model\CountriesRates.class
+com\vat\rates\standardreduced\main\rest\controller\ReducedRateRestService.class
+com\vat\rates\standardreduced\main\rest\controller\StandardRateRestService.class
+com\vat\rates\standardreduced\main\StandardReducedRatesServiceApplication.class
