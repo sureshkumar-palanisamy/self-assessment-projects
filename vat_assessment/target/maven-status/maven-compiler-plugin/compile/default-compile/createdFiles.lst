@@ -1,0 +1,4 @@
+com\vat\main\webservice\controller\RestWebserviceController.class
+com\vat\main\webservice\services\RateService.class
+com\vat\main\webservice\model\CountryRates.class
+com\vat\main\VatAssessmentApplication.class
