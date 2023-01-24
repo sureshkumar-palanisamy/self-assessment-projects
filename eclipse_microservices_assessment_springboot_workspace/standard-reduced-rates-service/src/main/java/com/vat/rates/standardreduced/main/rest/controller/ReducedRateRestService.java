@@ -38,10 +38,10 @@ private static final Logger logger = LoggerFactory.getLogger(ReducedRateRestServ
 	public ResponseEntity<List<String>> getLowestThreeCountriesReducedRates() {
 		logger.info("Entered inside getLowestThreeCountriesReducedRates() method in ReducedRateRestService");
 
-		List<String> countryList = new ArrayList<String>();
+		var countryList = new ArrayList<String>();
 		try {
 
-			List<CountriesRates> countriesList = countriesRatesServiceProxy.loadRatesJsonData().stream()
+			var countriesList = countriesRatesServiceProxy.loadRatesJsonData().stream()
 					.sorted(Comparator.comparing(CountriesRates::getReduced_rate))
 					.limit(REDUCED_RATE_COUNT).collect(Collectors.toList());
 
