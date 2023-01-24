@@ -48,7 +48,7 @@ public class RatesWebService {
 	public ResponseEntity<List<CountryRates>> loadRatesJsonData() {
 		logger.info("Entered inside loadRatesJsonData() method in RatesWebService");
 
-			List<CountryRates> countryRatesList = new ArrayList<>();
+			var countryRatesList = new ArrayList<CountryRates>();
 
 	        JsonNode jsonResponse = rateServiceProxy.loadRatesJsonData();
 	        JsonNode jsonRatesList = jsonResponse.get(RATES);
