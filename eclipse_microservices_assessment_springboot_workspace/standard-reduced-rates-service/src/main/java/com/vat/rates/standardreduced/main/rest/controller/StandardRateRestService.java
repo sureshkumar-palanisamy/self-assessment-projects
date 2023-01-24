@@ -38,10 +38,10 @@ private static final Logger logger = LoggerFactory.getLogger(StandardRateRestSer
 	public ResponseEntity<List<String>> getHighestThreeCountriesStandardRates() {
 		logger.info("Entered inside getHighestThreeCountriesStandardRates() method in StandardRateRestService");
 
-		List<String> countryList = new ArrayList<String>();
+		var countryList = new ArrayList<String>();
 		try {
 
-			List<CountriesRates> countriesList = countriesRatesServiceProxy.loadRatesJsonData().stream()
+			var countriesList = countriesRatesServiceProxy.loadRatesJsonData().stream()
 					.sorted(Comparator.comparing(CountriesRates::getStandard_rate).reversed())
 					.limit(STANDARD_RATE_COUNT).collect(Collectors.toList());
 
