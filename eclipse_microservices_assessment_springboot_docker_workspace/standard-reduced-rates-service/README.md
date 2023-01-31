@@ -6,7 +6,7 @@ Rest API to get standard-rate and reduced-rate filtered data
 ```
 mvn spring-boot:run
 ```
-3. access swagger - http://localhost:8082/swagger-ui/index.html
+access swagger - http://localhost:8082/swagger-ui/index.html
 
 User should click on GET button to test the below requirements 
 
