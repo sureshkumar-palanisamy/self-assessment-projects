@@ -1,0 +1,9 @@
+com\vat\rates\standardreduced\main\rest\service\ReducedRateRestService.class
+com\vat\rates\standardreduced\main\rest\service\CountriesRatesServiceProxy.class
+com\vat\rates\standardreduced\main\dto\CountryRateDTO.class
+com\vat\rates\standardreduced\main\rest\controller\StandardRateRestController.class
+com\vat\rates\standardreduced\main\rest\service\StandardRateRestService.class
+com\vat\rates\standardreduced\main\model\CountriesRates.class
+com\vat\rates\standardreduced\main\config\SwaggerConfig.class
+com\vat\rates\standardreduced\main\StandardReducedRatesServiceApplication.class
+com\vat\rates\standardreduced\main\rest\controller\ReducedRateRestController.class
