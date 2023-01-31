@@ -1,0 +1,22 @@
+version: '2.13.0'
+services:
+  rate-service:
+    image: rate-service-tag/rate-service:dockerfilerates
+    ports:
+      - "8081:8081"
+    restart: always
+    networks:
+      - standard_reduced_rates_network
+
+  standard-reduced-rate-service:
+    image: standard-reduced-rates-service-tag/standard-reduced-rates-service:dockerfilestandard-reduced-rates-service
+    ports:
+      - "8082:8082"
+    restart: always
+    depends_on:
+      - rate-service
+    networks:
+      - standard_reduced_rates_network
+
+networks: 
+  standard_reduced_rates_network:

@@ -1,0 +1,23 @@
+docker build -t rate-service-tag/rate-service:dockerfilerates .
+docker build -t standard-reduced-rates-service-tag/standard-reduced-rates-service:dockerfilestandard-reduced-rates-service .
+
+docker container run --net standard_reduced_rates_network --name rateservice rate-service-tag/rate-service:dockerfilerates
+
+docker container run --net standard_reduced_rates_network   standard-reduced-rates-service-tag/standard-reduced-rates-service:dockerfilestandard-reduced-rates-service
+
+ISSUE-1: -> when connecting msg office network, localhost URL submit which invokes external end point point it throws SSL Handshake exception
+SOL: -> Switch to msg internet network then this issue resolved
+
+ISSUE-2: -> when running the application to communicate between localhost services via docker it throws Connection Refused error
+SOL: -> Below points should take care to resolve it
+
+1. After creating docker image of service1 (rateservice with port 8081) --please note the image name for mapping to calling from others services
+2. Run the docker run command for service1 (Ex:rateservice) 
+   docker run -p 8081:8081 --name rateservice --net standard_reduced_rates_network rate-service-tag/rate-service:dockerfilerates
+   --make sure docker execution command orders like flag, port, service name, then image name
+3. In service2 (standardservice with port 8082) update service1 name in the URL of calling service 
+   --instead of localhost it should be http://rateservice:8081/<service1 context path name>
+4. After creating docker image of service2, run the docker run command for service2
+   docker run --net standard_reduced_rates_network -p 8082:8082 --name standardservice  standard-reduced-rates-service-tag/standard-reduced-rates-service:dockerfilestandard-reduced-rates-service
+   --make sure the docker execution command orders like network name, port, service name, then the image name
+Note:- Both service should be in same network, we can create new  custom network and use it in docker run command
