@@ -1,0 +1,7 @@
+com\vat\rates\main\config\SwaggerConfig.class
+com\vat\rates\main\controller\RateController.class
+com\vat\rates\main\service\RateServiceProxy.class
+com\vat\rates\main\RateServiceApplication.class
+com\vat\rates\main\model\CountryRates.class
+com\vat\rates\main\service\RateService.class
+com\vat\rates\main\Test.class
